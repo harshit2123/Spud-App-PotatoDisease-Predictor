@@ -153,22 +153,47 @@ export const ImageUpload = () => {
   const [isLoading, setIsloading] = useState(false);
   let confidence = 0;
 
+  // const sendFile = async () => {
+  //   if (image) {
+  //     let formData = new FormData();
+  //     formData.append("file", selectedFile);
+  //     let res = await axios({
+  //       method: "post",
+  //       url: "https://fastapi-application-spud-ml-app.onrender.com/",
+  //       // url: "https://potato-disease-predictor.onrender.com/",
+  //       data: formData,
+  //     });
+  //     if (res.status === 200) {
+  //       setData(res.data);
+  //     }
+  //     setIsloading(false);
+  //   }
+  // }
   const sendFile = async () => {
-    if (image) {
-      let formData = new FormData();
-      formData.append("file", selectedFile);
+  if (image) {
+    let formData = new FormData();
+    formData.append("file", selectedFile);
+
+    try {
       let res = await axios({
         method: "post",
         url: "https://fastapi-application-spud-ml-app.onrender.com/",
-        // url: "https://potato-disease-predictor.onrender.com/",
         data: formData,
+        headers: {
+          Authorization: `Bearer YOUR_API_TOKEN`, // Replace with your actual token
+        },
       });
+
       if (res.status === 200) {
         setData(res.data);
       }
+    } catch (error) {
+      console.error("Error uploading the file:", error);
+    } finally {
       setIsloading(false);
     }
   }
+};
 
   const clearData = () => {
     setData(null);
