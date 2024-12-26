@@ -159,7 +159,8 @@ export const ImageUpload = () => {
       formData.append("file", selectedFile);
       let res = await axios({
         method: "post",
-        url: "https://potato-disease-predictor.onrender.com/",
+        url: "https://fastapi-application-spud-ml-app.onrender.com/",
+        // url: "https://potato-disease-predictor.onrender.com/",
         data: formData,
       });
       if (res.status === 200) {
