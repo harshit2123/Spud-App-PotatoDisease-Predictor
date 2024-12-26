@@ -169,7 +169,7 @@ export const ImageUpload = () => {
   //     setIsloading(false);
   //   }
   // }
-  const sendFile = async () => {
+const sendFile = async () => {
   if (image) {
     let formData = new FormData();
     formData.append("file", selectedFile);
@@ -179,9 +179,6 @@ export const ImageUpload = () => {
         method: "post",
         url: "https://fastapi-application-spud-ml-app.onrender.com/",
         data: formData,
-        headers: {
-          Authorization: `Bearer YOUR_API_TOKEN`, // Replace with your actual token
-        },
       });
 
       if (res.status === 200) {
