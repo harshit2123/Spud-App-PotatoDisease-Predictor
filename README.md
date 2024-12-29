@@ -2,6 +2,9 @@
 
 Spud - Health is a potato disease predictor app using TensorFlow. This project includes both mobile and web versions of the application.
 
+## 🔗 Live Demo
+Check out the live application here: [[Potato Disease Detector - Spud Application](#)]([https://onlinewhiteboardproject.vercel.app/](https://spud-app-potato-disease-predictor.vercel.app/))
+
 ## Overview
 
 This application uses machine learning to predict diseases in potato plants based on images. It's designed to help farmers and gardeners quickly identify potential issues with their potato crops.
